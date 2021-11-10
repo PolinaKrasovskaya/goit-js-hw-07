@@ -36,7 +36,7 @@ function onOpenLargeImage (event) {
     const instance = basicLightbox.create(`
         <img src=""/>
     `)
-    
+
     instance.element().querySelector('img').src = imageLarge;
     instance.show();
 
@@ -46,5 +46,3 @@ function onOpenLargeImage (event) {
         }
     })
 }
-
-console.log(galleryItems);
