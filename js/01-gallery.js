@@ -33,16 +33,20 @@ function onOpenLargeImage (event) {
 
     const imageLarge = event.target.dataset.source;
 
-    const instance = basicLightbox.create(`
-        <img src=""/>
-    `)
+    const instance = basicLightbox.create(
+        `<img src=""/>`,
+        {
+            onShow: () => window.addEventListener("keydown", onClose),
+            onClose: () => window.removeEventListener("keydown", onClose),
+            
+        })
 
     instance.element().querySelector('img').src = imageLarge;
     instance.show();
 
-    document.addEventListener('keydown', (event) => {
+    function onClose (event) {
         if(event.key === 'Escape') {
             instance.close();
         }
-    })
+    }
 }
