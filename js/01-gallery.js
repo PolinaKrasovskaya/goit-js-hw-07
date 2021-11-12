@@ -36,6 +36,7 @@ function onOpenLargeImage (event) {
     const instance = basicLightbox.create(
         `<img src=""/>`,
         {
+            //💩💩💩 мне интуитивно что-то не очень нравится, но работает:)
             onShow: () => window.addEventListener("keydown", onClose),
             onClose: () => window.removeEventListener("keydown", onClose),
             
